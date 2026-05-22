@@ -79,11 +79,11 @@ while True:
 
     # Send result to client
     c.sendall(output.encode())
-```
-# Close connection
+
+Close connection
 c.close()
 s.close()
-
+```
 2.client code
 import socket
 
