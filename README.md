@@ -25,127 +25,19 @@ This commands includes
 <BR>
 • Other IP Commands e.g. show ip route etc.
 <BR>
-```
-1.server code
-import socket
-import subprocess
-
-# Create socket
-s = socket.socket()
-
-# Bind IP and Port
-s.bind(('localhost', 8000))
-
-# Listen for client
-s.listen(1)
-
-print("Server listening on port 8000...")
-
-# Accept connection
-c, addr = s.accept()
-
-print("Connected:", addr)
-
-while True:
-
-    # Receive command
-    command = c.recv(1024).decode().strip()
-
-    # Exit condition
-    if not command or command.lower() == 'exit':
-        print("Client disconnected.")
-        break
-
-    try:
-
-        # Execute command
-        completed = subprocess.run(
-            command,
-            capture_output=True,
-            text=True,
-            shell=True
-        )
-
-        # Combine output and error
-        output = completed.stdout + completed.stderr
-
-        # If no output
-        if not output:
-            output = "Command executed successfully."
-
-    except Exception as e:
-
-        output = f"Command failed: {e}"
-
-    # Send result to client
-    c.sendall(output.encode())
-
-Close connection
-c.close()
-s.close()
-```
-2.client code
-import socket
-
-# Create socket
-s = socket.socket()
-
-try:
-
-    # Connect to server
-    s.connect(('localhost', 8000))
-
-    print("Connected to server.")
-    print("Type commands or 'exit' to quit.\n")
-
-    while True:
-
-        # Get command
-        cmd = input("Enter command: ").strip()
-
-        if not cmd:
-            continue
-
-        # Send command
-        s.send(cmd.encode())
-
-        # Exit
-        if cmd.lower() == 'exit':
-            print("Closing connection...")
-            break
-
-        # Receive result
-        data = b""
-
-        while True:
-
-            part = s.recv(4096)
-
-            data += part
-
-            if len(part) < 4096:
-                break
-
-        # Display output
-        print("\n----- RESULT -----")
-        print(data.decode())
-        print("------------------\n")
-
-except ConnectionRefusedError:
-
-    print("Server is not running!")
-
-finally:
-
-    s.close()
-```
+##OUTPUT##
+<img width="1919" height="1079" alt="Screenshot 2026-05-25 092348" src="https://github.com/user-attachments/assets/50ceafd0-1e09-4c56-99ae-52605513bd54" />
+<img width="1919" height="1079" alt="Screenshot 2026-05-25 092418" src="https://github.com/user-attachments/assets/ef9453a6-97d0-4155-ab38-55684f12cf12" />
+<img width="1919" height="1079" alt="Screenshot 2026-05-25 092430" src="https://github.com/user-attachments/assets/24a63c69-2d20-4f45-8c21-657bf5696f47" />
+<img width="1919" height="1079" alt="Screenshot 2026-05-25 092444" src="https://github.com/user-attachments/assets/c3cd912b-9840-40a8-a2ee-0ceae8ce2ad5" />
+<img width="1919" height="1079" alt="Screenshot 2026-05-25 092457" src="https://github.com/user-attachments/assets/9e7b30f8-92de-483a-a6ef-61e5ecfc0263" />
+<img width="1919" height="1079" alt="Screenshot 2026-05-25 092511" src="https://github.com/user-attachments/assets/904c058c-808a-48c6-b3ee-59c347a78fa5" />
+<img width="1919" height="1079" alt="Screenshot 2026-05-25 092523" src="https://github.com/user-attachments/assets/27bcd560-2aa4-4056-ba00-e7a6a18e86d6" />
 
 
-## Output##
-<img width="1050" height="518" alt="Screenshot 2026-05-25 083034" src="https://github.com/user-attachments/assets/158dd37b-2a6f-4ded-8430-cb08729024b6" />
-<img width="1030" height="560" alt="Screenshot 2026-05-25 083045" src="https://github.com/user-attachments/assets/cbb0fdfe-c4ef-4017-9177-5c446085d181" />
-<img width="1054" height="491" alt="Screenshot 2026-05-25 083056" src="https://github.com/user-attachments/assets/41ef139c-692f-492b-97d2-2b6164f2e148" />
-<img width="1028" height="828" alt="Screenshot 2026-05-25 083119" src="https://github.com/user-attachments/assets/35903caf-5b63-4fea-ad33-9ddcb287f74b" />
+
+
+
 
 
 
