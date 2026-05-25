@@ -141,9 +141,14 @@ finally:
 ```
 
 
-## Output
-<img width="1918" height="1023" alt="Screenshot 2026-05-22 182515" src="https://github.com/user-attachments/assets/563eb977-c484-498a-81f1-2f0d5bea4c65" />
-<img width="1919" height="1079" alt="Screenshot 2026-05-22 182530" src="https://github.com/user-attachments/assets/c43281da-96ea-4459-978f-eb704c5c620c" />
+## Output##
+<img width="1050" height="518" alt="Screenshot 2026-05-25 083034" src="https://github.com/user-attachments/assets/158dd37b-2a6f-4ded-8430-cb08729024b6" />
+<img width="1030" height="560" alt="Screenshot 2026-05-25 083045" src="https://github.com/user-attachments/assets/cbb0fdfe-c4ef-4017-9177-5c446085d181" />
+<img width="1054" height="491" alt="Screenshot 2026-05-25 083056" src="https://github.com/user-attachments/assets/41ef139c-692f-492b-97d2-2b6164f2e148" />
+<img width="1028" height="828" alt="Screenshot 2026-05-25 083119" src="https://github.com/user-attachments/assets/35903caf-5b63-4fea-ad33-9ddcb287f74b" />
+
+
+
 
 
 ## Result
